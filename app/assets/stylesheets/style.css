@@ -19,6 +19,7 @@ body {
 #border-body {
     border: rgba(214, 9, 160, 0.682) 5px solid ;
     margin-right: 14px;
+    border-radius: 3%;
 }
 
 #bg-footer {
@@ -28,4 +29,14 @@ body {
 
 #bg-navbar {
     background-color: hsl(240, 92%, 24%);
+}
+
+#text-navbar {
+    color: white;
+    padding-right: 43px;
+}
+
+#anchor {
+    text-decoration: none;
+    margin-left: 22px;
 }

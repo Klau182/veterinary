@@ -1,23 +1,23 @@
-<nav class="navbar navbar-expand-lg", id= "bg-navbar">
+<nav class="navbar navbar-expand-lg fixed-top", id= "bg-navbar">
   <div class="container-fluid">
-<%= link_to "Veterinary Center", home_index_path, id:"text-navbar", class: "nav-link active"  %>
-
-   
+    <%= link_to "Veterinary Center", home_index_path, id:"text-navbar", class: "nav-link active"  %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <%= link_to "Iniciar Sesion", new_user_session_path, class:"badge text-bg-secondary"  %>
-        <%= link_to "Crear Cuenta", new_user_registration_path, class: "badge text-bg-secondary"  %>
-        <%= link_to 'cerrar session', destroy_user_session_path, data: { turbo_method: :delete }, class: "badge text-bg-secondary" %>
-
-        
-        
+        <%= link_to "Iniciar Sesion", new_user_session_path, class:"badge text-bg-light", id:"anchor"  %>
+        <%= link_to "Crear Cuenta", new_user_registration_path, class: "badge text-bg-light", id:"anchor"  %>
+        <%= link_to 'Cerrar Session', destroy_user_session_path, data: { turbo_method: :delete }, class: "badge text-bg-light", id:"anchor" %>
       </div>
     </div>
   </div>
 </nav>
+
+   
+
+        
+        
 
 
 
