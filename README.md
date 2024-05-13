@@ -49,4 +49,22 @@ antes de realizar la migracion en el archivo de migracion debe estar asi:
   end
 ```
 
+#Generamos las vistas de devise
 
+```bash
+rails generate devise:views
+```
+
+
+
+
+no borrar
+
+<div id="pets">
+  <% @pets.each do |pet| %>
+    <%= render pet %>
+    <p>
+      <%= link_to "Show this pet", pet %>
+    </p>
+  <% end %>
+</div>
