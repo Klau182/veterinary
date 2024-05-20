@@ -56,15 +56,38 @@ rails generate devise:views
 ```
 
 
+Implementacion icono en la barra de navegacion
+
+descargamos el icono del siguiente link, la descargamos en la carpeta de imagenes
+
+https://icons8.com/icons/set/shell
+
+En el archivo application de la carpeta Layouts en la seccion header anexamos la ruta
+del icono descargado
+
+<%= favicon_link_tag('nombre_icono.png')%>
+
+##Validacion campos peso y altura de mascota no sean numeros negativos
+
+En el controlador de mascotas colocamos una condicional, si se ingresan
+numeros negativos se devolvera a la vista de editar dicha mascota
+
+```ruby
+def validate_field_number
+  pet_params = params[:pet]
+  weight = pet_params[:weight].to_i
+  height = pet_params[:height].to_i
+        
+  if weight < 0 || height < 0
+    redirect_to pet_path, alert: "El peso y la altura deben ser mayores o iguales a cero."
+  end
+end
+ ```
+
+ en los before_action llamamos al metodo que creamos para que la estatura y peso
+ no sean numeros negativos
 
 
-no borrar
-
-<div id="pets">
-  <% @pets.each do |pet| %>
-    <%= render pet %>
-    <p>
-      <%= link_to "Show this pet", pet %>
-    </p>
-  <% end %>
-</div>
+```ruby
+ before_action :validate_field_number, only: %i[ create update ]
+```

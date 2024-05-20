@@ -1,4 +1,6 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+
+<h2>Editando <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -13,7 +15,9 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+   <br>
+    <%= f.label :Contrasena %> <i>(Ingresa tu nueva contrasena)</i><br />
+    
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
@@ -22,22 +26,26 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+  <br>
+    <%= f.label :Reingresa_tu_contrasena %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+  <br>
+    <%= f.label :Contrasena_Actual %> <i>(Para efectuar el cambio de tu clave)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Actualizar", id:"btn-click", class: "btn rounded-pill text-white" %>
   </div>
 <% end %>
+<br>
+<h3 class="text">Cancelar mi Usuario</h3>
+<br>
+<div>Unhappy? <%= button_to "Cerrar Cuenta", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, id:"btn-click", class: "btn rounded-pill text-white" %></div>
+<br>
+<%= link_to "Volver Atras", :back, id:"btn-click", class: "btn rounded-pill text-white"  %>
 
-<h3>Cancel my account</h3>
-
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+</div>

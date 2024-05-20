@@ -1,13 +1,23 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @pet %>
-
-<div>
-  <%= link_to "Edit this pet", edit_pet_path(@pet) %> |
-  <%= link_to "Back to pets", pets_path %>
-
-  <%= button_to "Destroy this pet", @pet, method: :delete %>
+<div class="container">
+  <div>
+    <%= link_to "Editar Datos De Mascota", edit_pet_path(@pet), class:"btn", id:"btn-click" %> 
+    <br>
+    <br>
+  
+    <%= link_to "Atras", pets_path, class:"btn", id:"btn-click" %>
+    <br>
+    <br>
+  
+    <%= button_to "Eliminar Datos de Mascota", @pet, method: :delete, class:"btn", id:"btn-click" %>
+    <br>
+    <br>
+  </div>
 </div>
+
+
+
+
 
 
 

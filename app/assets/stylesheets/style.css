@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(148, 159, 159, 0.699);
+    background-color: rgba(148, 159, 159, 0.808);
 }
 
 .img-frontpage {
@@ -10,6 +10,7 @@ body {
 .card-img-top {
     width: 300px;
     height: 200px;
+    padding-top: 19px;
 }
 
 #veterinary {
@@ -34,9 +35,19 @@ body {
 #text-navbar {
     color: white;
     padding-right: 43px;
+   
 }
 
 #anchor {
     text-decoration: none;
     margin-left: 22px;
 }
+
+#btn-click {
+    background-color: rgb(247, 113, 209);
+}
+
+.text {
+    color: white;
+}
+
